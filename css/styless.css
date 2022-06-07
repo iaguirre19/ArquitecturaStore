@@ -19,6 +19,7 @@ body {
 }
 h1,h2,h3 {
     font-weight: 900;
+    line-height: 1.2rem;
     margin: 1rem 0 4rem 0;
 }
 h1 {
@@ -31,6 +32,9 @@ h3{
     font-size: 5rem;
 }
 a{
+    text-decoration: none;
+}
+img{
     max-width: 100%;
     display: block;
 }
@@ -56,4 +60,179 @@ a{
 }
 .mt-5{
     margin-top:5rem;
+}
+/*================Header===========*/
+.header{
+    min-height: 60rem;
+    background-image:url(../img/hero.jpg);
+    background-repeat: no-repeat;/*para que no se repita el background*/
+    background-size: cover;/*llena por completo el espacio de la imagen*/
+    background-position: center;/*centra la imagen de fonfo que escogi para background, (se puede mover la imagen en: center, top,left,rigth)*/
+    padding: 5rem 0;
+}
+.contenido-header{
+    display: flex;
+    flex-direction: column;
+    height: calc(60rem - 4rem);
+    justify-content: space-between;
+    color: var(--blanco);
+}
+.nombre-sitio{
+    font-weight: 300;
+    text-align: center;
+    font-size: 3rem;
+}
+@media (min-width:768px) {
+    .logo{
+        position: relative;
+        bottom: 6rem;
+    }
+    .nombre-sitio{
+        font-size: 5rem;
+        display: flex;
+        flex-wrap: wrap;
+        /*Pone el texto del titulo mas grande en ipad*/
+    }
+}
+@media (min-width: 1280px) { 
+     .logo{
+         bottom: 0;
+     }
+}
+.nombre-sitio span{
+    font-weight: 900;
+}
+@media (min-width: 768px) { 
+     .nombre-sitio span{
+         position: relative;
+         top:4rem;
+     }
+}
+@media (min-width: 1280px) { 
+    .nombre-sitio span{
+        top: 0;
+    }
+}
+@media (min-width: 768px) { 
+    .barra{
+        display: flex;
+        justify-content: space-between; /*Esto empuja una parte a la izquierda y otra a la derecha*/
+        align-items: center;
+        /*Este codigo es para que en el tamano de un ipad se pueda colocar la informacion de la barra de lado derecho pero en el mobil se ponga abajo del titulo*/
+    }
+}
+.contacto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+}
+@media (min-width: 768px) { 
+    .contacto{
+        align-items: flex-end;
+    } 
+}
+.telefono{
+    display: flex;
+}
+.telefono::before{
+    position: relative;
+    bottom:1rem;
+    content:'';
+    display: block;
+    margin-right: 1rem;
+    width: 4rem;
+    height: 4rem;
+    background-image:url(../img/telefono.png) ;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.header a{
+    color: var(--blanco);
+    font-size: 2rem;
+}
+.navegacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+@media (min-width: 767px) { 
+     .navegacion{
+         flex-wrap: wrap;
+         flex-direction: row;
+         position: relative;
+     }
+}
+@media (min-width: 1280px) { 
+    .navegacion{
+        flex-wrap: nowrap;
+        right: 0;
+    }
+}
+.navegacion a{
+    padding: .5rem;
+    transition: background-color 300ms;
+    width: 100%;
+    text-align: center;
+}
+@media (min-width: 768px) { 
+     .navegacion{
+         padding: 1rem 2rem;
+     }
+}
+
+.navegacion a:hover{
+    background-color: rgb(255 255 255 /.5);
+    color: #111111;
+}
+.slogan{
+    text-align: center;
+}
+@media (min-width: 768px) { 
+     .slogan{
+         text-align: right;
+     }
+}
+.slogan h1{
+    font-size: 3rem;
+    margin: 2.5rem;
+}
+@media (min-width: 768px) { 
+     .slogan h1{
+         font-size: 5rem;
+     }
+}
+.slogan p{
+    margin: 0;
+    line-height: 1;
+}
+/*Nosotros*/
+.nosotros{
+   display: grid;
+   grid-template-rows: repeat(2, 1fr);
+   background-image: url(../img/nosotros.jpg); 
+   background-repeat: no-repeat;
+   background-position: bottom center;
+}
+@media (min-width: 1280px) { 
+     .nosotros{
+         grid-template-columns: repeat(3,1fr);
+     }
+}
+.contenido-nosotros{
+    background-color: var(--blanco);
+    padding: 5rem;
+}
+.contenido-nosotros h2{
+    line-height: 1; /*Esto es para que haya un salto de linea en el texto y no se ponga arriba del otro texto colapzando*/
+    margin-bottom: 1rem;
+}
+@media (min-width: 1280px) { 
+     .contenido-nosotros{
+         grid-column: 2 / 4;
+     }
+}
+.contenido-nosotros p{
+    margin-bottom: 1rem;
 }
